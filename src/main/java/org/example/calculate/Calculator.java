@@ -13,7 +13,7 @@ public class Calculator {
             new DivisionOperator()
     );
 
-    private static int calculate(int operand1, String operator, int operand2) {
+    public static int calculate(int operand1, String operator, int operand2) {
 
        return operators.stream()
                 .filter(operators -> operators.supports(operator))
