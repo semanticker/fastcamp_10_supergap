@@ -1,6 +1,5 @@
-package org.example.calculate;
+package org.example.calculate2;
 
-import org.example.cal.ArithmeticOperator;
 
 import java.util.List;
 
@@ -13,9 +12,9 @@ public class Calculator {
             new DivisionOperator()
     );
 
-    public static int calculate(int operand1, String operator, int operand2) {
+    public static int calculate(PositiveNumber operand1, String operator, PositiveNumber operand2) {
 
-       return operators.stream()
+        return operators.stream()
                 .filter(operators -> operators.supports(operator))
                 .map(operators -> operators.calculate(operand1, operand2))
                 .findFirst()
@@ -26,7 +25,7 @@ public class Calculator {
 
     public static int calculate2(int operand1, String operator, int operand2) {
 
-       return operators.stream()
+        return operators.stream()
                 .filter(operators -> operators.supports(operator))
                 .map(operators -> operators.calculate(operand1, operand2))
                 .findFirst()
@@ -36,3 +35,4 @@ public class Calculator {
 
 
 }
+
