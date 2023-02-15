@@ -22,7 +22,9 @@ public class GradeCalculator {
         double resultCredit = 0;
 
         for (Course course : courses) {
-            resultCredit += course.getCredit() * course.getGradeToNumber();
+            // resultCredit += course.getCredit() * course.getGradeToNumber();
+            resultCredit += course.multiplyCreditAndCourseGrade();
+
         }
 
         int totalCompletedCredit = courses.stream()
