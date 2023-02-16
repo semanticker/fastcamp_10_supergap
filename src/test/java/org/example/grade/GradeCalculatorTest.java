@@ -31,7 +31,8 @@ public class GradeCalculatorTest {
                 new Course("자료구조",3,"A+")
         );
 
-        GradeCalculator gradeCalculator = new GradeCalculator(courseList);
+        //GradeCalculator gradeCalculator = new GradeCalculator(courseList);
+        GradeCalculator gradeCalculator = new GradeCalculator(new Courses(courseList));
         double result = gradeCalculator.calculateGrade();
 
         assertThat(result).isEqualTo(4.5);
