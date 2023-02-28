@@ -2,11 +2,12 @@ package org.example;
 
 import java.util.Objects;
 
+// GET http://localhost:8080/calculate?operand1=11&operator=*&operand2=55 HTTP/1.1
 public class RequestLine {
 
     private final String method; // GET
-    private final String urlPath; // /calculate ? operand1=11&operator=*&operand2=55
-    private String queryString;
+    private final String urlPath; // /calculate
+    private String queryString; // operand1=11&operator=*&operand2=55
 
     /**
      * /calculate?operand1=11&operator=*&operand2=55 HTTP/1.1
@@ -44,5 +45,13 @@ public class RequestLine {
     @Override
     public int hashCode() {
         return Objects.hash(method, urlPath, queryString);
+    }
+
+    public boolean isGetRequest() {
+        return "GET".equals(this.method);
+    }
+
+    public boolean matchPath(String requestPath) {
+        return urlPath.equals(requestPath);
     }
 }
