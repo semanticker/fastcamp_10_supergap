@@ -22,4 +22,11 @@ public class QueryStrings {
                 });
     }
 
+    public String getValue(String key) {
+        return this.queryStrings.stream()
+                .filter(queryString -> queryString.exists(key))
+                .map(QueryString::getValue)
+                .findFirst()
+                .orElse(null);
+    }
 }

@@ -14,7 +14,7 @@ public class HttpRequest {
     }
 
     public QueryStrings getQueryStrings() {
-        return null;// requestLine.getQueryString();
+        return requestLine.getQueryStrings();
     }
 
     public boolean isGetRequest() {
