@@ -6,6 +6,8 @@ import java.io.IOException;
 public class HttpRequest {
 
     private final RequestLine requestLine;
+    // private final RequestHeader requestHeader;
+    // private final Body body;
 
 
 
