@@ -31,9 +31,16 @@ public class CustomWebApplictionServer {
 
                 logger.info("[CustomerWebApplicationServer] client connected!");
 
+
+                /**
+                 * Step2
+                 */
+                new Thread(new ClientRequestHandler(clientSocket)).start();
+
                 /*
                  * Step - 사용자 요청을 메인 Thread가 처리하도록 한다.
                  */
+                /*
                 try (InputStream in = clientSocket.getInputStream();
                      OutputStream out = clientSocket.getOutputStream()){
                     BufferedReader br = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8));
@@ -58,6 +65,12 @@ public class CustomWebApplictionServer {
                     }
 
                 }
+                */
+
+
+
+
+
 
             }
         }
