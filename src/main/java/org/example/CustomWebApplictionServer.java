@@ -9,10 +9,14 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class CustomWebApplictionServer {
 
     private final int port;
+
+    private final ExecutorService executorService = Executors.newFixedThreadPool(10);
 
     private static final Logger logger = LoggerFactory.getLogger(CustomWebApplictionServer.class);
 
@@ -31,11 +35,15 @@ public class CustomWebApplictionServer {
 
                 logger.info("[CustomerWebApplicationServer] client connected!");
 
+                /**
+                 * Step3
+                 */
+                executorService.execute(new ClientRequestHandler(clientSocket));
 
                 /**
                  * Step2
                  */
-                new Thread(new ClientRequestHandler(clientSocket)).start();
+                //new Thread(new ClientRequestHandler(clientSocket)).start();
 
                 /*
                  * Step - 사용자 요청을 메인 Thread가 처리하도록 한다.
