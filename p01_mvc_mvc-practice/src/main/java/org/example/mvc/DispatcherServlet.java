@@ -30,7 +30,7 @@ public class DispatcherServlet extends HttpServlet {
         log.info("DispatcherServlet#service started");
 
         try {
-            Controller handler = requestMappingHandler.findHandler(request.getRequestURI());
+            Controller handler = requestMappingHandler.findHandler(new HandlerKey(RequestMethod.valueOf(request.getMethod()),request.getRequestURI()));
             String viewName = handler.handleRequest(request, response);
 
             RequestDispatcher requestDispatcher = request.getRequestDispatcher(viewName);

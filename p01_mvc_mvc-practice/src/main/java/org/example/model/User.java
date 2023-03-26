@@ -11,6 +11,22 @@ public class User {
         this.name = name;
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public boolean equalsUser(User user) {
         return this.equals(user);
     }
