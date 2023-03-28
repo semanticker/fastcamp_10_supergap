@@ -5,7 +5,7 @@ import org.example.mvc.controller.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RequestMappingHandler {
+public class RequestMappingHandler implements HandlerMapping{
     // URL path => key,
     // /users -> UserController
     private Map<HandlerKey, Controller> mappings = new HashMap<>();
