@@ -36,7 +36,7 @@ public class AnnotationHandlerMapping implements HandlerMapping {
 
                 Arrays.stream(getRequestMapping(requestMapping))
                         .forEach(requestMethod -> handlers.put(
-                                new HandlerKey(requestMethod, requestMapping.value()), new AnnotationHandler()
+                                new HandlerKey(requestMethod, requestMapping.value()), new AnnotationHandler(clazz, declaredMethod)
                         ));
             });
         });
