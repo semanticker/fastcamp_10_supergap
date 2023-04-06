@@ -14,4 +14,6 @@
   * 이 브랜치는 빌드 실패를 허용하는가?
   * 이 브랜치는 테스트 실패를 허용하는가?
   * 이 브랜치는 임시로 운영하는가? 유지하지 않고 수시로 삭제하는가?
-  *
+  
+https://github.com/nvie/gitflow
+https://docs.github.com/en/get-started/quickstart/github-flow
